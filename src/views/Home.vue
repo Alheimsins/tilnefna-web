@@ -43,7 +43,7 @@
         </v-card>
       </v-flex>
      <v-snackbar v-model="snackbar" color="primary" :bottom="true">
-        {{error}}
+        {{message}}
       </v-snackbar>
     </v-layout>
   </v-container>
@@ -60,7 +60,7 @@ export default {
     },
     radios: 'meg',
     valid: true,
-    error: false,
+    message: false,
     snackbar: false,
     rules: {
       required: value => !!value || 'Påkrevd.',
@@ -71,12 +71,15 @@ export default {
   methods: {
     async submit () {
       if (this.$refs.form.validate()) {
-        const form = this.form
+        const form = this.nomineeName === 'meg' ? Object.assign({}, this.form, { nomineeName: this.name, nomineeMobile: this.mobile }) : this.form
         try {
           await this.$http.post('https://tilnefna.service.alheimsins.net/api/nominate', form)
+          this.message = 'Nominert person'
+          this.snackbar = true
+          this.$refs.form.reset()
         } catch (error) {
           this.snackbar = true
-          this.error = error.message
+          this.message = error.message
         }
       }
     }
