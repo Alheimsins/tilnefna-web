@@ -13,7 +13,7 @@
               <h3 class="headline mb-0">Nominer din kandidat</h3>
               <div class="text">
                 <p>Rødt vokser både i medlemstall og på meningsmålingene. Ved lokalvalget neste høst skal vi også vokse i antall folkevalgte for Notodden.</p>
-                <p>Nå trenger vi din hjelp til å fylle listen vår.</p>
+                <p>Nå trenger vi din hjelp til å fylle listen med de beste folka.</p>
               </div>
             </div>
           </v-card-title>
