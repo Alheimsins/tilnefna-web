@@ -26,7 +26,7 @@
               <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
                 <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
                 <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt tlf nummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
-                <div slot="label" class="text">Hvem vil du <strong>nominere?</strong></div>
+                <div class="text">Hvem vil du <strong>nominere?</strong></div>
                 <v-radio-group v-model="radios">
                   <v-radio label="Meg selv" value="meg"></v-radio>
                   <v-radio label="Andre" value="andre"></v-radio>
