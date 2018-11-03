@@ -12,8 +12,8 @@
             <div>
               <h3 class="headline mb-0">Nominer din kandidat</h3>
               <div class="text">
-                <p>Rødt vokser både i medlemstall og på meningsmålingene. Ved lokalvalget neste høst skal vi også vokse i antall folkevalgte.</p>
-                <p>Nå trenger vi din hjelp til å fylle listene i hundrevis av norske kommuner.</p>
+                <p>Rødt vokser både i medlemstall og på meningsmålingene. Ved lokalvalget neste høst skal vi også vokse i antall folkevalgte for Notodden.</p>
+                <p>Nå trenger vi din hjelp til å fylle listen vår.</p>
               </div>
             </div>
           </v-card-title>
@@ -22,7 +22,7 @@
             <v-flex class="pa-3">
               <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
                 <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
-                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt telefonnummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
+                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt mobilnummer" hint="F.eks. 41514965" prepend-icon="smartphone"></v-text-field>
                 <br />
                 <p class="text">Hvem vil du <strong>nominere?</strong></p>
                 <v-radio-group v-model="radios">
@@ -31,7 +31,7 @@
                 </v-radio-group>
                 <span v-if="radios === 'andre'">
                   <v-text-field v-model="form.nomineeName" :rules="[rules.required]" label="Nominertes navn" hint="F.eks. Geir Gåsodden" prepend-icon="person"></v-text-field>
-                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes telefonnummer" hint="F.eks. 95552759" prepend-icon="phone"></v-text-field>
+                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone"></v-text-field>
                 </span>
                 <br /><br />
                 <v-btn outline color="primary" @click="submit" left>Meld på</v-btn>
