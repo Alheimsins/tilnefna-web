@@ -12,11 +12,8 @@
             <div>
               <h3 class="headline mb-0">Nominer din kandidat</h3>
               <div class="text">
-              Hvem er du?<br/>
-              navn og mobilnummer<br/>
-              Hvem vil du nominere?<br/>
-              [Meg selv] [Andre]<br/>
-              navn og mobilnummer på andre
+                <p>Rødt vokser både i medlemstall og på meningsmålingene. Ved lokalvalget neste høst skal vi også vokse i antall folkevalgte.</p>
+                <p>Nå trenger vi din hjelp til å fylle listene i hundrevis av norske kommuner.</p>
               </div>
             </div>
           </v-card-title>
@@ -26,7 +23,8 @@
               <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
                 <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
                 <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt telefonnummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
-                <div class="text">Hvem vil du <strong>nominere?</strong></div>
+                <br />
+                <p class="text">Hvem vil du <strong>nominere?</strong></p>
                 <v-radio-group v-model="radios">
                   <v-radio label="Meg selv" value="meg"></v-radio>
                   <v-radio label="Andre" value="andre"></v-radio>
