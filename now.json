@@ -1,0 +1,20 @@
+{
+  "name": "tilnefna-web",
+  "type": "static",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "static": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "alias": "tilnefna.alheimsins.net",
+  "files": [
+    "dist"
+  ]
+}
