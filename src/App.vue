@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-toolbar flat color="white" height="100%" app>
-      <router-link to="/update">
+      <router-link to="/">
         <v-toolbar-side-icon>
           <v-img
             :src="require('./assets/logo.png')"
