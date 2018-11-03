@@ -25,15 +25,15 @@
             <v-flex class="pa-3">
               <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
                 <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
-                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt tlf nummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
+                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt telefonnummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
                 <div class="text">Hvem vil du <strong>nominere?</strong></div>
                 <v-radio-group v-model="radios">
                   <v-radio label="Meg selv" value="meg"></v-radio>
                   <v-radio label="Andre" value="andre"></v-radio>
                 </v-radio-group>
                 <span v-if="radios === 'andre'">
-                  <v-text-field v-model="form.nomineeName" :rules="[rules.required]" label="Navn til nominerte" hint="F.eks. Geir Gåsodden" prepend-icon="person"></v-text-field>
-                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominerts tlf nummer" hint="F.eks. 95552759" prepend-icon="phone"></v-text-field>
+                  <v-text-field v-model="form.nomineeName" :rules="[rules.required]" label="Nominertes navn" hint="F.eks. Geir Gåsodden" prepend-icon="person"></v-text-field>
+                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes telefonnummer" hint="F.eks. 95552759" prepend-icon="phone"></v-text-field>
                 </span>
                 <br /><br />
                 <v-btn outline color="primary" @click="submit" left>Meld på</v-btn>
