@@ -1,0 +1,98 @@
+<template>
+  <v-container>
+    <v-layout>
+      <v-flex>
+        <v-card>
+          <v-img
+            src="https://cdn.sanity.io/images/cvvjxa4t/production_new/ca880e246f9c03cfd200b70ff5119b1c5751d035-4000x2245.jpg?rect=1,0,3998,2245&w=2000&h=1123&q=80"
+            aspect-ratio="3"
+          ></v-img>
+
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">Nominer din kandidat</h3>
+              <div class="text">
+              Hvem er du?<br/>
+              navn og mobilnummer<br/>
+              Hvem vil du nominere?<br/>
+              [Meg selv] [Andre]<br/>
+              navn og mobilnummer på andre
+              </div>
+            </div>
+          </v-card-title>
+
+          <v-card-actions>
+            <v-flex class="pa-3">
+              <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
+                <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
+                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt tlf nummer" hint="F.eks. 41514965" prepend-icon="phone"></v-text-field>
+                <div slot="label" class="text">Hvem vil du <strong>nominere?</strong></div>
+                <v-radio-group v-model="radios">
+                  <v-radio label="Meg selv" value="meg"></v-radio>
+                  <v-radio label="Andre" value="andre"></v-radio>
+                </v-radio-group>
+                <span v-if="radios === 'andre'">
+                  <v-text-field v-model="form.nomineeName" :rules="[rules.required]" label="Navn til nominerte" hint="F.eks. Geir Gåsodden" prepend-icon="person"></v-text-field>
+                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominerts tlf nummer" hint="F.eks. 95552759" prepend-icon="phone"></v-text-field>
+                </span>
+                <br /><br />
+                <v-btn outline color="primary" @click="submit" left>Meld på</v-btn>
+              </v-form>
+            </v-flex>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+     <v-snackbar v-model="snackbar" color="primary" :bottom="true">
+        {{error}}
+      </v-snackbar>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    form: {
+      name: '',
+      mobile: '',
+      nomineeName: '',
+      nomineeMobile: ''
+    },
+    radios: 'meg',
+    valid: true,
+    error: false,
+    snackbar: false,
+    rules: {
+      required: value => !!value || 'Påkrevd.',
+      counter: value => value.length <= 20 || 'Maks 20 karakterer',
+      phone: value => /^\d{8}$/.test(value) || 'Ugyldig norsk nummer'
+    }
+  }),
+  methods: {
+    async submit () {
+      if (this.$refs.form.validate()) {
+        const form = this.form
+        try {
+          await this.$http.post('https://tilnefna.service.alheimsins.net/api/nominate', form)
+        } catch (error) {
+          this.snackbar = true
+          this.error = error.message
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.headline {
+  font-family: 'Rubik', sans-serif !important;
+  font-weight: 700;
+  font-size: 39.6px !important;
+  line-height: 1.5 !important;
+}
+.text {
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 18px;
+}
+</style>
