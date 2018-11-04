@@ -34,7 +34,7 @@
                   <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone"></v-text-field>
                 </span>
                 <br /><br />
-                <v-btn outline color="primary" @click="submit" left>Meld på</v-btn>
+                <v-btn outline color="primary" @click="submit" left>Send nominasjon</v-btn>
               </v-form>
             </v-flex>
           </v-card-actions>
