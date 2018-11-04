@@ -69,9 +69,10 @@ export default {
   methods: {
     async submit () {
       if (this.$refs.form.validate()) {
-        const form = this.nomineeName === 'meg' ? Object.assign({}, this.form, { nomineeName: this.name, nomineeMobile: this.mobile }) : this.form
+        const payload = this.radios === 'meg' ? Object.assign({}, this.form, { nomineeName: this.form.name, nomineeMobile: this.form.mobile }) : this.form
+        console.log(payload)
         try {
-          await this.$http.post('https://tilnefna.service.alheimsins.net/api/nominate', form)
+          await this.$http.post('https://tilnefna.service.alheimsins.net/api/nominate', payload)
           this.message = 'Nominert person'
           this.snackbar = true
           this.$refs.form.reset()
