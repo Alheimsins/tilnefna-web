@@ -4,7 +4,7 @@
       <v-flex>
         <v-card>
           <v-img
-            src="https://cdn.sanity.io/images/cvvjxa4t/production_new/ca880e246f9c03cfd200b70ff5119b1c5751d035-4000x2245.jpg?rect=1,0,3998,2245&w=2000&h=1123&q=80"
+            :src="require(`@/assets/liste.jpg`)"
             aspect-ratio="3"
           ></v-img>
 
