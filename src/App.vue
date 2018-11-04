@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-toolbar flat color="white" height="100%" app>
-      <router-link to="/">
-        <v-toolbar-side-icon>
+      <router-link to="/" aria-label="Hjem">
+        <v-toolbar-side-icon aria-label="Hjem">
           <v-img
             :src="require('./assets/logo.png')"
             contain

@@ -34,7 +34,7 @@
                   <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone"></v-text-field>
                 </span>
                 <br /><br />
-                <v-btn outline color="primary" @click="submit" left>Send nominasjon</v-btn>
+                <v-btn outline aria-label="Send nominasjon" color="primary" @click="submit" left>Send nominasjon</v-btn>
               </v-form>
             </v-flex>
           </v-card-actions>
@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .headline {
   font-family: 'Rubik', sans-serif !important;
   font-weight: 700;
@@ -97,4 +97,11 @@ export default {
   font-family: 'Rubik', sans-serif !important;
   font-size: 18px;
 }
+.v-btn--outline:hover {
+  background-color: red !important;
+}
+
+.v-btn--outline:hover .v-btn__content {
+  color: white !important;
+ }
 </style>
