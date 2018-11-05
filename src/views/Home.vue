@@ -4,7 +4,7 @@
       <v-flex>
         <v-card>
           <v-img
-            src="https://cdn.sanity.io/images/cvvjxa4t/production_new/ca880e246f9c03cfd200b70ff5119b1c5751d035-4000x2245.jpg?rect=1,0,3998,2245&w=2000&h=1123&q=80"
+            :src="require(`@/assets/liste.jpg`)"
             aspect-ratio="3"
           ></v-img>
 
@@ -34,7 +34,7 @@
                   <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone"></v-text-field>
                 </span>
                 <br /><br />
-                <v-btn outline color="primary" @click="submit" left>Send nominasjon</v-btn>
+                <v-btn outline aria-label="Send nominasjon" color="primary" @click="submit" left>Send nominasjon</v-btn>
               </v-form>
             </v-flex>
           </v-card-actions>
@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .headline {
   font-weight: 700;
   font-size: 39.6px !important;
@@ -95,4 +95,11 @@ export default {
 .text {
   font-size: 18px;
 }
+.v-btn--outline:hover {
+  background-color: red !important;
+}
+
+.v-btn--outline:hover .v-btn__content {
+  color: white !important;
+ }
 </style>
