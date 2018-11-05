@@ -88,13 +88,11 @@ export default {
 
 <style scoped>
 .headline {
-  font-family: 'Rubik', sans-serif !important;
   font-weight: 700;
   font-size: 39.6px !important;
   line-height: 1.5 !important;
 }
 .text {
-  font-family: 'Rubik', sans-serif !important;
   font-size: 18px;
 }
 </style>
