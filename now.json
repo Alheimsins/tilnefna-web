@@ -18,6 +18,15 @@
             "value" : "max-age=86400"
           }
         ]
+      },
+      {
+        "source" : "**/*.@(jpg|png)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "max-age=86400"
+          }
+        ]
       }
     ]
   },
