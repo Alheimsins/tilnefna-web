@@ -22,7 +22,7 @@
             <v-flex class="pa-3">
               <v-form ref="form" v-model="valid" lazy-validation @keyup.native.enter="submit">
                 <v-text-field autofocus :rules="[rules.required]" v-model="form.name" label="Ditt navn" hint="F.eks. Jonas Maccyber Enge" prepend-icon="person"></v-text-field>
-                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt mobilnummer" hint="F.eks. 41514965" prepend-icon="smartphone"></v-text-field>
+                <v-text-field v-model="form.mobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Ditt mobilnummer" hint="F.eks. 41514965" prepend-icon="smartphone" type="tel"></v-text-field>
                 <br />
                 <p class="text">Hvem vil du <strong>nominere?</strong></p>
                 <v-radio-group v-model="radios">
@@ -31,7 +31,7 @@
                 </v-radio-group>
                 <span v-if="radios === 'andre'">
                   <v-text-field v-model="form.nomineeName" :rules="[rules.required]" label="Nominertes navn" hint="F.eks. Geir Gåsodden" prepend-icon="person"></v-text-field>
-                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone"></v-text-field>
+                  <v-text-field v-model="form.nomineeMobile" :rules="[rules.required, rules.phone]" maxlength="8" label="Nominertes mobilnummer" hint="F.eks. 95552759" prepend-icon="smartphone" type="tel"></v-text-field>
                 </span>
                 <br /><br />
                 <v-btn outline aria-label="Send nominasjon" color="primary" @click="submit" left>Send nominasjon</v-btn>
@@ -73,7 +73,7 @@ export default {
         console.log(payload)
         try {
           await this.$http.post('https://tilnefna.service.alheimsins.net/api/nominate', payload)
-          this.message = 'Nominert person'
+          this.message = 'Takk for nominasjonen'
           this.snackbar = true
           this.$refs.form.reset()
         } catch (error) {
