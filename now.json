@@ -2,13 +2,6 @@
   "name": "tilnefna-web",
   "type": "static",
   "static": {
-    "public": "dist",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "headers": [
       {
         "source" : "**/*.@(css|js)",
@@ -30,8 +23,5 @@
       }
     ]
   },
-  "alias": "tilnefna.alheimsins.net",
-  "files": [
-    "dist"
-  ]
+  "alias": "tilnefna.alheimsins.net"
 }
