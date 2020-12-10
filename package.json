@@ -15,7 +15,7 @@
     "axios": "0.21.0",
     "clone": "2.1.2",
     "gulp": "4.0.2",
-    "register-service-worker": "1.7.1",
+    "register-service-worker": "1.7.2",
     "vue": "2.6.12",
     "vue-axios": "3.2.0",
     "vue-router": "3.4.9",
