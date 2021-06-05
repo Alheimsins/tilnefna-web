@@ -16,7 +16,7 @@
     "clone": "2.1.2",
     "gulp": "4.0.2",
     "register-service-worker": "1.7.2",
-    "vue": "2.6.12",
+    "vue": "2.6.13",
     "vue-axios": "3.2.4",
     "vue-router": "3.5.1",
     "vuetify": "2.5.3"
@@ -28,7 +28,7 @@
     "stylus": "0.54.8",
     "stylus-loader": "5.0.0",
     "vue-cli-plugin-vuetify": "2.4.1",
-    "vue-template-compiler": "2.6.12",
+    "vue-template-compiler": "2.6.13",
     "vuetify-loader": "1.7.2"
   },
   "postcss": {
