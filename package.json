@@ -26,7 +26,7 @@
     "@vue/cli-plugin-pwa": "4.5.13",
     "@vue/cli-service": "4.5.13",
     "stylus": "0.55.0",
-    "stylus-loader": "6.1.0",
+    "stylus-loader": "6.2.0",
     "vue-cli-plugin-vuetify": "2.4.2",
     "vue-template-compiler": "2.6.14",
     "vuetify-loader": "1.7.3"
