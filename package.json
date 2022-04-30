@@ -25,7 +25,7 @@
     "@vue/cli-plugin-babel": "4.5.15",
     "@vue/cli-plugin-pwa": "4.5.15",
     "@vue/cli-service": "4.5.15",
-    "stylus": "0.56.0",
+    "stylus": "0.57.0",
     "stylus-loader": "6.2.0",
     "vue-cli-plugin-vuetify": "2.4.8",
     "vue-template-compiler": "2.6.14",
