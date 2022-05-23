@@ -16,7 +16,7 @@
     "clone": "2.1.2",
     "gulp": "4.0.2",
     "register-service-worker": "1.7.2",
-    "vue": "3.2.35",
+    "vue": "3.2.36",
     "vue-axios": "3.4.1",
     "vue-router": "4.0.15",
     "vuetify": "2.6.6"
