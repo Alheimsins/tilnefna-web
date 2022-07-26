@@ -22,9 +22,9 @@
     "vuetify": "2.6.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "5.0.4",
-    "@vue/cli-plugin-pwa": "5.0.4",
-    "@vue/cli-service": "5.0.4",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-plugin-pwa": "5.0.8",
+    "@vue/cli-service": "5.0.8",
     "stylus": "0.58.1",
     "stylus-loader": "7.0.0",
     "vue-cli-plugin-vuetify": "2.5.1",
